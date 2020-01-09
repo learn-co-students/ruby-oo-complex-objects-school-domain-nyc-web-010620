@@ -5,19 +5,20 @@ class School
 
     def initialize(name)
         @name = name 
-        @roster = Hash.new {|h, k| h[k] = Array.new}  
+        @roster = {}
+        # @roster = Hash.new {|h, k| h[k] = Array.new}  
     end 
 
     def add_student(student_name, grade)
-        self.roster[grade] << student_name
+        # self.roster[grade] << student_name
 
-    # #    binding.pry
-    #     if @roster[grade]
-    #         @roster[grade] << student_name
-    #     else 
-    #         @roster[grade] = []
-    #         @roster[grade] << student_name
-    #     end 
+    #    binding.pry
+        if @roster[grade]
+            @roster[grade] << student_name
+        else 
+            @roster[grade] = []
+            @roster[grade] << student_name
+        end 
     end 
 
     def grade(grade)
