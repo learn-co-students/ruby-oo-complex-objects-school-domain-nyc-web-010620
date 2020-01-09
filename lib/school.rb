@@ -32,6 +32,7 @@ class School
         #     v.sort!
         end 
 
+        #self.roster 
         @roster
     end 
 
