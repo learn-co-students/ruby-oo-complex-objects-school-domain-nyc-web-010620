@@ -6,7 +6,7 @@ class School
     def initialize(name)
         @name = name 
         @roster = {}
-        # @roster = Hash.new {|h, k| h[k] = Array.new}  
+        # @roster = Hash.new {|roster, grade| roster[grade] = Array.new}  
     end 
 
     def add_student(student_name, grade)
@@ -26,8 +26,10 @@ class School
     end 
 
     def sort
-        self.roster.each do |k, v|
-            v.sort!
+        self.roster.each do |grade, student_name|
+            student_name.sort!
+        # self.roster.each do |k, v|
+        #     v.sort!
         end 
 
         self.roster
